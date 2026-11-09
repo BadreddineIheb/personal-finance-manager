@@ -1,7 +1,9 @@
 # Mes finances — Personal Finance Manager
 
 Application web de gestion financière personnelle : revenus, dépenses (fixes, variables, exceptionnelles), épargne, budgets, historique et rapports PDF.
-100 % locale : aucune donnée ne quitte le navigateur. Hébergeable gratuitement sur GitHub Pages.
+100 % locale : aucune donnée ne quitte le navigateur. Hébergée gratuitement sur GitHub Pages.
+
+**Application en ligne : <https://badreddineiheb.github.io/personal-finance-manager/>**
 
 ## État d'avancement
 
@@ -17,7 +19,7 @@ Application web de gestion financière personnelle : revenus, dépenses (fixes, 
 | 8 | Historique (synthèse mensuelle sur période personnalisée, opérations filtrables, comparaison de deux mois, calendrier financier, analyse et pistes d'amélioration) et simulateur d'épargne | ✅ |
 | 9 | Rapports PDF mensuel et annuel (synthèse, résumé rédigé, graphiques, tableaux, comparaison, budgets, épargne, annexe) | ✅ |
 | 10 | Sauvegarde JSON (export, import vérifié avec fusion ou remplacement), réinitialisation confirmée, rappel de sauvegarde, application installable et hors ligne (PWA) | ✅ |
-| 11 | Déploiement GitHub Pages | à venir |
+| 11 | Déploiement GitHub Pages | ✅ |
 
 ## Lancer l'application en local
 
@@ -41,6 +43,19 @@ npm test
 - **Import** : le fichier est entièrement vérifié avant toute écriture (application d'origine, version, types, montants en centimes entiers, dates, références entre éléments, identifiants uniques, cohérence de l'épargne). En cas d'erreur, rien n'est modifié et les erreurs sont listées. Deux modes : **Fusionner** (ajoute ce qui manque, garde la version la plus récente d'un même élément) ou **Remplacer** (avec confirmation).
 - **Réinitialisation** : efface tout après saisie du mot « EFFACER ».
 - **Hors ligne** : un service worker (`sw.js`) met en cache tous les fichiers de l'application. À chaque nouvelle version publiée, **incrémenter `CACHE_VERSION` dans `sw.js`** ; l'application propose alors « Mettre à jour ». Le test `tests/pwa.test.js` vérifie que la liste des fichiers en cache est complète.
+
+## Déploiement (GitHub Pages)
+
+Le site est publié depuis la branche `main`, dossier racine (Settings → Pages → *Deploy from a branch*). Aucune étape de compilation : les fichiers du dépôt sont servis tels quels. Le fichier `.nojekyll` désactive le traitement Jekyll.
+
+Publier une nouvelle version :
+
+1. Incrémenter `CACHE_VERSION` dans `sw.js` (par exemple `pfm-1.0.1`) et, si des fichiers ont été ajoutés ou supprimés, mettre à jour la liste `PRECACHE`.
+2. Lancer `npm test` (le test `pwa` vérifie que la liste est complète).
+3. `git commit` puis `git push` : GitHub Pages republie le site en une à deux minutes.
+4. À l'ouverture suivante, l'application propose « Mettre à jour ».
+
+Les données des utilisateurs ne sont jamais dans le dépôt : elles restent dans le navigateur de chacun.
 
 ## Raccourcis clavier
 
