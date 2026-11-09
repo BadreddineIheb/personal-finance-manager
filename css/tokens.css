@@ -1,0 +1,131 @@
+/* PFM — tokens générés depuis le design system (tokens.json). Ne pas modifier à la main. */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f1f3f6;
+  --surface-3: #e7eaef;
+  --border: #e3e6eb;
+  --border-strong: #c9ced7;
+  --ink: #0e1116;
+  --ink-2: #525a68;
+  --ink-3: #646b78;
+  --accent: #3d4fd6;
+  --accent-ink: #ffffff;
+  --accent-soft: #eef0fd;
+  --positive: #0f7a55;
+  --positive-soft: #e6f5ee;
+  --negative: #c8323b;
+  --negative-soft: #fdecec;
+  --warning: #a85008;
+  --warning-soft: #fff3e2;
+  --type-fixed: #5848d4;
+  --type-variable: #0a7671;
+  --type-exceptional: #b04e08;
+  --cat-housing: #4c5bd4;
+  --cat-utilities: #8a6d1f;
+  --cat-telecom: #0e86ad;
+  --cat-insurance: #6b5b95;
+  --cat-transport: #c2560a;
+  --cat-groceries: #2f8a3e;
+  --cat-restaurants: #d1495b;
+  --cat-shopping: #b5408f;
+  --cat-subscriptions: #7a5af8;
+  --cat-health: #0b7f7a;
+  --cat-leisure: #c58b00;
+  --cat-travel: #2b7bd8;
+  --cat-car: #57606f;
+  --cat-other: #8a8f98;
+  --focus: var(--accent);
+  --overlay: rgba(14,17,22,0.45);
+  --shadow-sm: 0 1px 2px rgba(14,17,22,0.05);
+  --shadow-md: 0 4px 16px rgba(14,17,22,0.08);
+  --shadow-lg: 0 16px 48px rgba(14,17,22,0.16);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0d10;
+  --surface: #15171b;
+  --surface-2: #1c1f24;
+  --surface-3: #262a31;
+  --border: #262a31;
+  --border-strong: #3a3f48;
+  --ink: #eceef2;
+  --ink-2: #a6acb7;
+  --ink-3: #8d939e;
+  --accent: #8e9bff;
+  --accent-ink: #0b0d10;
+  --accent-soft: #1d2246;
+  --positive: #3ccf8e;
+  --positive-soft: #0f2a1e;
+  --negative: #ff737a;
+  --negative-soft: #2e1517;
+  --warning: #f5b43c;
+  --warning-soft: #2b2010;
+  --type-fixed: #a89bff;
+  --type-variable: #3fc8c0;
+  --type-exceptional: #ff9a4d;
+  --cat-housing: #8e9bff;
+  --cat-utilities: #e0b85a;
+  --cat-telecom: #4cc3e8;
+  --cat-insurance: #b3a3e0;
+  --cat-transport: #ff9a4d;
+  --cat-groceries: #5fd17a;
+  --cat-restaurants: #ff7a8a;
+  --cat-shopping: #f084cf;
+  --cat-subscriptions: #b9a5ff;
+  --cat-health: #3fc8c0;
+  --cat-leisure: #ffd166;
+  --cat-travel: #6fb0ff;
+  --cat-car: #a3abb8;
+  --cat-other: #6b7280;
+  --focus: var(--accent);
+  --overlay: rgba(0,0,0,0.6);
+  --shadow-sm: none;
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.6);
+}
+
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --radius-full: 999px;
+  --sidebar-width: 248px;
+  --sidebar-collapsed: 72px;
+  --topbar-height: 64px;
+  --tabbar-height: 64px;
+  --content-max: 1320px;
+  --control-height: 40px;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.amount-hero { font-size: 32px; line-height: 40px; font-weight: 650; letter-spacing: -0.02em; }
+.amount-kpi { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -0.015em; }
+.amount-sm { font-size: 17px; line-height: 24px; font-weight: 600; }
+.title { font-size: 22px; line-height: 28px; font-weight: 650; letter-spacing: -0.01em; }
+.heading { font-size: 15px; line-height: 22px; font-weight: 600; }
+.body { font-size: 14px; line-height: 20px; font-weight: 400; }
+.body-strong { font-size: 14px; line-height: 20px; font-weight: 500; }
+.small { font-size: 13px; line-height: 18px; font-weight: 400; }
+.label { font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.01em; }

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Gestion financière personnelle : revenus, dépenses, épargne, budgets et rapports. Données stockées uniquement dans votre navigateur.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d10" media="(prefers-color-scheme: dark)">
+  <title>Mes finances</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mes finances">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preload" href="assets/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Thème appliqué avant l'affichage pour éviter un flash clair/sombre -->
+  <script>
+    (function () {
+      var pref = 'system';
+      try { pref = localStorage.getItem('pfm-theme') || 'system'; } catch (e) { /* stockage indisponible */ }
+      var dark = pref === 'dark' || (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <noscript>
+    <div class="fatal card">Cette application nécessite JavaScript.</div>
+  </noscript>
+
+  <div class="app" id="app">
+    <aside class="sidebar" aria-label="Navigation principale">
+      <a class="brand" href="#/dashboard">
+        <span class="brand-mark" data-icon="wallet"></span>
+        <span class="brand-text">Mes finances</span>
+      </a>
+      <nav class="nav" id="nav"></nav>
+      <p class="sidebar-foot"><span data-icon="lock"></span>Données stockées uniquement dans ce navigateur.</p>
+    </aside>
+
+    <div class="main">
+      <header class="topbar">
+        <div id="month-picker-slot"></div>
+        <div class="search" id="search-slot"></div>
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-icon hide-mobile" id="theme-toggle" type="button" aria-label="Changer de thème"></button>
+          <button class="btn btn-primary hide-mobile" id="add-button" type="button" aria-keyshortcuts="N"></button>
+        </div>
+      </header>
+      <main class="content" id="view" tabindex="-1">
+        <p class="subtle">Chargement…</p>
+      </main>
+    </div>
+
+    <nav class="tabbar" id="tabbar" aria-label="Navigation"></nav>
+  </div>
+
+  <div class="toast-region" id="toasts" role="region" aria-label="Notifications" aria-live="polite"></div>
+</body>
+</html>
